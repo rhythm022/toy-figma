@@ -1,4 +1,15 @@
 import MyButton from './Button.vue';
+import { Docs } from './Button.docs';
+
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+} from '@storybook/addon-docs';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
@@ -11,6 +22,21 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Docs/>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+        </>
+      ),
     },
   },
 };
@@ -26,13 +52,6 @@ const Template = (args) => ({
   // And then the `args` are bound to your component with `v-bind="args"`
   template: '<my-button v-bind="args" />',
 });
-
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
