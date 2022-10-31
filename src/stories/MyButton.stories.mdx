@@ -1,0 +1,78 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "./Button.vue";
+import { Docs } from "./Button.docs";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="example/MyButton"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "description _markdown_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" />123</div>',
+});
+
+# Checkbox
+
+<Description of={"."} />
+
+## description2
+
+<Description
+  markdown={dedent`
+  ### Custom description3
+`}
+/>
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our Markdown
+documentation.
+
+<Canvas columns={5} withToolbar>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "small", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<h3>Some here</h3>
+
+<Canvas>
+  <Docs />
+</Canvas>
+
+<h3>Some here</h3>
+<Source dark id="example-mybutton--secondary" />
