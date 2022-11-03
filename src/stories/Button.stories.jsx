@@ -1,5 +1,4 @@
 import MyButton from './Button.vue';
-import { Docs } from './Button.docs';
 
 import {
   Title,
@@ -12,7 +11,7 @@ import {
 } from '@storybook/addon-docs';
 
 export default {
-  title: 'Example/Button',
+  title: 'sse/Button',
   component: MyButton,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -26,7 +25,6 @@ export default {
     docs: {
       page: () => (
         <>
-          <Docs/>
           <Title />
           <Subtitle />
           <Description />

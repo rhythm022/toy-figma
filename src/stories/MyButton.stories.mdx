@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import MyButton from "./Button.vue";
 import { Docs } from "./Button.docs";
+import { Prototype } from "./Button.prototype";
 import dedent from "ts-dedent";
 import {
   Title,
@@ -14,12 +15,12 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="example/MyButton"
+  title="sse/MyButton"
   component={MyButton}
   parameters={{
     docs: {
       description: {
-        component: "description _markdown_",
+        component: "_description_",
       },
     },
   }}
@@ -38,25 +39,14 @@ export const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: '<div><my-button v-bind="args" />123</div>',
+  template: '<div><my-button v-bind="args" /></div>',
 });
 
-# Checkbox
+# 提单过滤器
 
 <Description of={"."} />
 
-## description2
-
-<Description
-  markdown={dedent`
-  ### Custom description3
-`}
-/>
-
-With `MDX`, we can define a story for `Checkbox` right in the middle of our Markdown
-documentation.
-
-<Canvas columns={5} withToolbar>
+<Canvas columns={5}>
   <Story name="Secondary" args={{ label: "secondary" }}>
     {Template.bind({})}
   </Story>
@@ -68,11 +58,33 @@ documentation.
   </Story>
 </Canvas>
 
-<h3>Some here</h3>
+### 使用示例
 
-<Canvas>
-  <Docs />
-</Canvas>
+<Source dark id="sse-mybutton--secondary" />
 
-<h3>Some here</h3>
-<Source dark id="example-mybutton--secondary" />
+### 目的
+
+收集信息（达到某一状态时进行快照，提交快照）
+
+### 途径
+
+- 提供可选项目进行选择（selector）
+- 直接输入（input）
+
+### 依赖于
+
+- 可选项目
+
+### context
+
+- 纯属性：无
+- 纯方法：提交快照
+- 属性及其方法：可选项目（提交请求、数据）
+
+### 原型
+
+<Prototype />
+
+### 实现(状态图、类图、序列图等)
+
+<Docs />

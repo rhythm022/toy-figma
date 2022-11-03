@@ -1,42 +1,17 @@
 import React,{useEffect } from 'react';
 
-export function Docs() {
+export function CmpTree() {
   return (
-    <div>
-          <Mermaid chart={`
-stateDiagram-v2
-[*] --> Still
-Still --> [*]
-
-Still --> Moving
-Moving --> Still
-Moving --> Crash
-Crash --> [*]
-    `}/>
     <Mermaid chart={`
-classDiagram
-Animal <|-- Duck
-Animal <|-- Fish
-Animal <|-- Zebra
-Animal : +int age
-Animal : +String gender
-Animal: +isMammal()
-Animal: +mate()
-class Duck{
-    +String beakColor
-    +swim()
-    +quack()
-}
-class Fish{
-    -int sizeInFeet
-    -canEat()
-}
-class Zebra{
-    +bool is_wild
-    +run()
-}
+    flowchart TD
+    subgraph 维稳页面
+    B["view 组件"]
+    B.-oC[[MyButton]]
+    B--xD[Header]
+    B -- text -->E(某组件)
+    C x--x F[Button]
+    end
     `}/>
-    </div>
   );
 }
 

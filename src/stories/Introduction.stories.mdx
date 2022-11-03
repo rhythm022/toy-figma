@@ -1,14 +1,15 @@
-import { Meta } from '@storybook/addon-docs';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
+import { Meta } from "@storybook/addon-docs";
+import Code from "./assets/code-brackets.svg";
+import Colors from "./assets/colors.svg";
+import Comments from "./assets/comments.svg";
+import Direction from "./assets/direction.svg";
+import Flow from "./assets/flow.svg";
+import Plugin from "./assets/plugin.svg";
+import Repo from "./assets/repo.svg";
+import StackAlt from "./assets/stackalt.svg";
+import { CmpTree } from "./CmpTree";
 
-<Meta title="Example/Introduction" />
+<Meta title="sse/Introduction" />
 
 <style>
   {`
@@ -111,10 +112,11 @@ import StackAlt from './assets/stackalt.svg';
       font-size: 12px;
       display: inline-block;
     }
-  `}
+
+`}
 </style>
 
-# Welcome to Storybook
+# Welcome to SSE 重点项目
 
 Storybook helps you build UI components in isolation from your app's business logic, data, and context.
 That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
@@ -122,6 +124,18 @@ That makes it easy to develop hard-to-reach states. Save these UI states as **st
 Browse example stories now by navigating to them in the sidebar.
 View their code in the `stories` directory to learn how they work.
 We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+
+<CmpTree />
+<div className="subheading">组件详情</div>
+
+[MyButton](?path=/docs/sse-mybutton--secondary)
+
+[Button](?path=/docs/sse-mybutton--secondary)
+
+[Header](?path=/docs/sse-mybutton--secondary)
+
+[某组件](?path=/docs/sse-mybutton--secondary)
+
 
 <div className="subheading">Configure</div>
 
@@ -172,40 +186,7 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
   </a>
 </div>
 
-<div className="subheading">Learn</div>
-
-<div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
-      <strong>GitHub project</strong>
-      View the source and add issues
-    </span>
-  </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
-    </span>
-  </a>
-</div>
-
 <div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
+  <span className="tip">Tip</span>Edit the Markdown in{" "}
   <code>stories/Introduction.stories.mdx</code>
 </div>
