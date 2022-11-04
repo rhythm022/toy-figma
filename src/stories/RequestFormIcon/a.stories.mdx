@@ -1,0 +1,101 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="sse/RequestFormIcon"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "_description_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" /></div>',
+});
+
+# 申请单入口 ICON 
+
+<Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+<div className="subheading">途径</div>
+
+  - 显示申请单数量
+  - 跳转到申请单查看页面
+
+<div className="subheading">依赖于</div>
+
+  - 申请单数量
+  - 申请单查看页面的地址
+
+<div className="subheading">内链接</div>
+
+  - （存储）申请单数量：`requestFormNum`
+  - （方法）查询申请单数量：`getRequestFormNum`
+
+<div className="subheading">外链接</div>
+<div className="subheading">实现</div>
+
+<Canvas columns={5}>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<div className="subheading">使用示例</div>
+
+<Source dark id="." />
+
+<div className="subheading">状态图、类图、序列图等</div>
+
+<Chart />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>

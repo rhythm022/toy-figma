@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/BLFilter"
+  title="sse/RevisionTableIcon"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,9 +42,30 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 提单过滤器
+# 修订表入口 ICON
 
 <Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+<div className="subheading">途径</div>
+
+  - 显示修订表内容数量
+  - 跳转到修订表查看页面
+
+<div className="subheading">依赖于</div>
+
+  - 修订表内容数量
+  - 修订表查看页面的地址
+
+<div className="subheading">内链接</div>
+
+  - （存储）修订表内容数量：`revisionNum`
+  - （方法）查询修订表内容数量：`getRevisionNum`
+
+<div className="subheading">外链接</div>
+<div className="subheading">实现</div>
 
 <Canvas columns={5}>
   <Story name="Secondary" args={{ label: "secondary" }}>
@@ -56,34 +77,10 @@ export const Template = (args) => ({
 </Canvas>
 
 <div className="subheading">使用示例</div>
+
 <Source dark id="." />
 
-<div className="subheading">目的</div>
-收集信息（达到某一状态时进行快照，提交快照）
-
-<div className="subheading">途径</div>
-
-- 提供可选项目进行选择（selector）
-- 直接输入（input）
-
-<div className="subheading">依赖于</div>
-
-- 中间状态可选项
-
-<div className="subheading">内链接</div>
-
-- 根据条件计算匹配的项：`getXXXOptions(condition): Options`
-- 提交过滤项：`updateComfirmedFilterItems(comfirmedFilterItems)`
-
-<div className="subheading">外链接</div>
-
-无
-
-<div className="subheading">原型</div>
-
-<Prototype />
-
-<div className="subheading">实现(状态图、类图、序列图等)</div>
+<div className="subheading">状态图、类图、序列图等</div>
 
 <Chart />
 

@@ -1,0 +1,105 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="sse/BLFilter"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "_description_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" /></div>',
+});
+
+# 提单过滤项收集
+
+<Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+
+收集用于过滤提单的过滤项
+
+<div className="subheading">途径</div>
+
+- 提供匹配项目进行选择（selector）
+- 直接输入（input）
+
+<div className="subheading">依赖于</div>
+
+- 匹配项
+
+<div className="subheading">内链接</div>
+
+- （方法）计算匹配的项：`getOptions(condition, genre): Options`
+- （方法）提交过滤：`filterBL(comfirmedFilterItems)`
+
+<div className="subheading">外链接</div>
+
+无
+
+<div className="subheading">实现</div>
+
+<Canvas columns={5}>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<div className="subheading">使用示例</div>
+<Source dark id="." />
+
+<div className="subheading">状态图、类图、序列图等</div>
+
+<Chart />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>

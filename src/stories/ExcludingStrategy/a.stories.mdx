@@ -1,0 +1,102 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="sse/ExcludingStrategy"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "_description_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" /></div>',
+});
+
+# 剔除策略显示
+
+<Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+<div className="subheading">途径</div>
+
+  - 显示有哪些剔除策略被使用
+
+<div className="subheading">依赖于</div>
+
+  - 使用的剔除策略
+
+<div className="subheading">内链接</div>
+
+  - （存储）期数：`id`
+  - （存储）航线：`tradeLane`
+  - （存储）第几次编制：`no`
+  - （方法）某期数的剔除策略：`getExcludingStrategy(id, no, tradeLane)`
+
+<div className="subheading">外链接</div>
+
+<div className="subheading">实现</div>
+
+<Canvas columns={5}>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<div className="subheading">使用示例</div>
+
+<Source dark id="." />
+
+<div className="subheading">状态图、类图、序列图等</div>
+
+<Chart />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>
