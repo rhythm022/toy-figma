@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
-import MyButton from "./Button.vue";
-import { Docs } from "./Button.docs";
-import { Prototype } from "./Button.prototype";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
 import dedent from "ts-dedent";
 import {
   Title,
@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/MyButton"
+  title="sse/BLFilter"
   component={MyButton}
   parameters={{
     docs: {
@@ -53,38 +53,52 @@ export const Template = (args) => ({
   <Story name="Large" args={{ size: "large", label: "Button" }}>
     {Template.bind({})}
   </Story>
-  <Story name="Small" args={{ size: "small", label: "Button" }}>
-    {Template.bind({})}
-  </Story>
 </Canvas>
 
-### 使用示例
+<div className="subheading">使用示例</div>
+<Source dark id="." />
 
-<Source dark id="sse-mybutton--secondary" />
-
-### 目的
-
+<div className="subheading">目的</div>
 收集信息（达到某一状态时进行快照，提交快照）
 
-### 途径
+<div className="subheading">途径</div>
 
 - 提供可选项目进行选择（selector）
 - 直接输入（input）
 
-### 依赖于
+<div className="subheading">依赖于</div>
 
-- 可选项目
+- 中间状态可选项
 
-### context
+<div className="subheading">内链接</div>
 
-- 纯属性：无
-- 纯方法：提交快照
-- 属性及其方法：可选项目（提交请求、数据）
+- 根据条件计算匹配的项：`getXXXOptions(condition): Options`
+- 提交过滤项：`updateComfirmedFilterItems(comfirmedFilterItems)`
 
-### 原型
+<div className="subheading">外链接</div>
+
+无
+
+<div className="subheading">原型</div>
 
 <Prototype />
 
-### 实现(状态图、类图、序列图等)
+<div className="subheading">实现(状态图、类图、序列图等)</div>
 
-<Docs />
+<Chart />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>

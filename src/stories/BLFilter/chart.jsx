@@ -1,6 +1,6 @@
 import React,{useEffect } from 'react';
 
-export function Docs() {
+export function Chart() {
   return (
     <div>
           <Mermaid chart={`

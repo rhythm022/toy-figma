@@ -1,4 +1,4 @@
-import MyButton from './Button.vue';
+import MyButton from '../src/Button.vue';
 
 import {
   Title,
