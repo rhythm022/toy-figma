@@ -42,29 +42,30 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 申请单入口 ICON 
+# 申请单入口 ICON
 
 <Description of={"."} />
 
 <Prototype />
 
 <div className="subheading">目的</div>
+
+- 显示申请单数量
+- 跳转到申请单查看页面
+
 <div className="subheading">途径</div>
-
-  - 显示申请单数量
-  - 跳转到申请单查看页面
-
 <div className="subheading">依赖于</div>
 
-  - 申请单数量
-  - 申请单查看页面的地址
+- 申请单数量
+- 跳转地址
 
-<div className="subheading">内链接</div>
+<div className="subheading">下层依赖</div>
 
-  - （存储）申请单数量：`requestFormNum`
-  - （方法）查询申请单数量：`getRequestFormNum`
+- （通知）申请单数量：`requestFormNum`
+- 跳转地址
 
-<div className="subheading">外链接</div>
+<div className="subheading">上层依赖</div>
+<div className="subheading">基组件</div>
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>

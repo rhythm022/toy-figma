@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/BLFilter"
+  title="sse/RequestFormTable"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,34 +42,26 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 提单过滤项收集器
+# 申请单的 table
 
 <Description of={"."} />
 
 <Prototype />
 
 <div className="subheading">目的</div>
-
-收集用于过滤提单的过滤项
-
 <div className="subheading">途径</div>
 
-- 提供匹配项目进行选择（selector）
-- 直接输入（input）
+- 显示申请单组成的 table
 
 <div className="subheading">依赖于</div>
 
-- 匹配项
+- 申请单
 
 <div className="subheading">下层依赖</div>
 
-- （方法）计算匹配的项：`getOptions(condition, genre): Options`
-- （方法）提交过滤：`filterBL(comfirmedFilterItems)`
+- （方法）获取申请单
 
 <div className="subheading">上层依赖</div>
-
-无
-
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>

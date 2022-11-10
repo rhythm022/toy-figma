@@ -49,22 +49,23 @@ export const Template = (args) => ({
 <Prototype />
 
 <div className="subheading">目的</div>
+
+- 显示修订表内容数量
+- 跳转到修订表查看页面
+
 <div className="subheading">途径</div>
-
-  - 显示修订表内容数量
-  - 跳转到修订表查看页面
-
 <div className="subheading">依赖于</div>
 
-  - 修订表内容数量
-  - 修订表查看页面的地址
+- 修订表内容数量
+- 跳转地址
 
-<div className="subheading">内链接</div>
+<div className="subheading">下层依赖</div>
 
-  - （存储）修订表内容数量：`revisionNum`
-  - （方法）查询修订表内容数量：`getRevisionNum`
+- （通知）修订表内容数量：`revisionNum`
+- 跳转地址
 
-<div className="subheading">外链接</div>
+<div className="subheading">上层依赖</div>
+<div className="subheading">基组件</div>
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>

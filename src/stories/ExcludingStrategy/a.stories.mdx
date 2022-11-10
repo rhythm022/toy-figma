@@ -49,22 +49,20 @@ export const Template = (args) => ({
 <Prototype />
 
 <div className="subheading">目的</div>
-<div className="subheading">途径</div>
 
-  - 显示有哪些剔除策略被使用
+- 显示剔除策略
+
+<div className="subheading">途径</div>
 
 <div className="subheading">依赖于</div>
 
-  - 使用的剔除策略
+- 剔除策略
 
-<div className="subheading">内链接</div>
+<div className="subheading">下层依赖</div>
 
-  - （存储）期数：`id`
-  - （存储）航线：`tradeLane`
-  - （存储）第几次编制：`no`
-  - （方法）某期数的剔除策略：`getExcludingStrategy(id, no, tradeLane)`
+- （方法）获取剔除策略
 
-<div className="subheading">外链接</div>
+<div className="subheading">上层依赖</div>
 
 <div className="subheading">实现</div>
 

@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/BLFilter"
+  title="sse/CompaniesSelector"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 提单过滤项收集器
+# 选择公司
 
 <Description of={"."} />
 
@@ -50,25 +50,20 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-收集用于过滤提单的过滤项
+- 选择公司
 
 <div className="subheading">途径</div>
-
-- 提供匹配项目进行选择（selector）
-- 直接输入（input）
-
 <div className="subheading">依赖于</div>
 
-- 匹配项
+- 全部公司
+- 之前已被选中的公司
 
 <div className="subheading">下层依赖</div>
 
-- （方法）计算匹配的项：`getOptions(condition, genre): Options`
-- （方法）提交过滤：`filterBL(comfirmedFilterItems)`
+- （方法）获取全部公司及其是否之前已被选中
+- （方法）提交全部公司及其是否现在已被选中
 
 <div className="subheading">上层依赖</div>
-
-无
 
 <div className="subheading">实现</div>
 
@@ -82,6 +77,7 @@ export const Template = (args) => ({
 </Canvas>
 
 <div className="subheading">使用示例</div>
+
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
