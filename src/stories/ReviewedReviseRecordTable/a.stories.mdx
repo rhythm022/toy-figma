@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/RequestFormIcon"
+  title="sse/ReviewedReviseRecordTable"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 申请单入口 ICON
+# 修订表中的修订结果 table
 
 <Description of={"."} />
 
@@ -50,22 +50,24 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示申请单数量
-- 跳转到申请单查看页面
+- 显示修订表中修订结果
+- 撤销某一条修订结果
 
 <div className="subheading">途径</div>
+
 <div className="subheading">依赖于</div>
 
-- 申请单数量
-- 跳转地址
+- 修订结果
 
 <div className="subheading">下层依赖</div>
 
-- （通知）申请单数量：`requestFormNum`
-- 跳转地址
+- 修订结果：`reviewedReviseRecordTable.items`
+- （方法）撤销修订：`reviewedReviseRecordTable.revert(id)`
 
 <div className="subheading">上层依赖</div>
-<div className="subheading">基组件</div>
+
+
+
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>
@@ -77,13 +79,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
-
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

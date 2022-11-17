@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/RequestFormTableReviwer"
+  title="sse/ExcludedStrategySelector"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 申请单审核
+# 剔除策略收集器
 
 <Description of={"."} />
 
@@ -50,19 +50,17 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 收集用户对每一票提单校核修订结果的审核意见
+- 收集剔除策略
 
 <div className="subheading">途径</div>
-
-- 逐个修改单元格(审核意见)的值(checkbox)
-- 逐个修改单元格(填写描述)的值(input)
-- 选择(全选字段)后批量操作
-
 <div className="subheading">依赖于</div>
+
+- 收集的剔除策略
+
 <div className="subheading">下层依赖</div>
 
-- （方法）获取申请单
-- （方法）提交审核意见
+- 收集的剔除策略:`strategyExcluding.strategies`
+- （方法）改变剔除策略：`strategyExcluding.toggleExcluding(strategy,newVal)`
 
 <div className="subheading">上层依赖</div>
 <div className="subheading">实现</div>
@@ -76,12 +74,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

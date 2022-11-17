@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Prototype() {
   return (
-    <iframe 
+ <iframe 
     width="100%" 
     height="1600" 
     class="ne-thirdparty-iframe"

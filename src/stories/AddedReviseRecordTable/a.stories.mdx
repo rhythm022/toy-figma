@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/ExcludingStrategyModifier"
+  title="sse/AddedReviseRecordTable"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 剔除策略收集
+# 被操作员添加进申请单的修订结果 table
 
 <Description of={"."} />
 
@@ -50,18 +50,24 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 收集剔除策略
+- 显示修订结果
+- 还原取消某一条修订操作
 
 <div className="subheading">途径</div>
+
 <div className="subheading">依赖于</div>
 
-- 无
+- 修订结果
 
 <div className="subheading">下层依赖</div>
 
-- （方法）提交剔除策略
+- 修订结果：`addedReviseRecordTable.items`
+- （方法）删除修订：`addedReviseRecordTable.deleteItem(id)`
 
 <div className="subheading">上层依赖</div>
+
+
+
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>
@@ -73,13 +79,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
-
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 选择公司
+# 公司选择器
 
 <Description of={"."} />
 
@@ -56,12 +56,12 @@ export const Template = (args) => ({
 <div className="subheading">依赖于</div>
 
 - 全部公司
-- 之前已被选中的公司
+- 被选中的公司
 
 <div className="subheading">下层依赖</div>
 
-- （方法）获取全部公司及其是否之前已被选中
-- （方法）提交全部公司及其是否现在已被选中
+- 全部公司及其是否被选中：`companySelecting.companies`
+- （方法）改变公司的选中状态：`companySelecting.toggleSelecting(company,newVal)`
 
 <div className="subheading">上层依赖</div>
 
@@ -76,13 +76,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
-
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

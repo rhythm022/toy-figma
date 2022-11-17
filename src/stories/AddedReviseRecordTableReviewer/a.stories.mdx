@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/RevisionTableIcon"
+  title="sse/AddedReviseRecordTableReviewer"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 修订表入口 ICON
+# 申请单审核
 
 <Description of={"."} />
 
@@ -50,22 +50,22 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示修订表内容数量
-- 跳转到修订表查看页面
+- 收集用户对申请单内修订结果的审核意见
 
 <div className="subheading">途径</div>
+
+- 逐个修改单元格(审核意见)的值(checkbox)
+- 逐个修改单元格(填写描述)的值(input)
+- 选择(全选字段)后批量操作
+
 <div className="subheading">依赖于</div>
-
-- 修订表内容数量
-- 跳转地址
-
 <div className="subheading">下层依赖</div>
 
-- （通知）修订表内容数量：`revisionNum`
-- 跳转地址
+- 申请单及其审核意见：`addedReviseRecordTableReviewing.items`
+- （方法）改变审核意见:`addedReviseRecordTableReviewing.setItem(id,key,newVal)`
+- （方法）提交:`addedReviseRecordTableReviewing.reviewDone()`
 
 <div className="subheading">上层依赖</div>
-<div className="subheading">基组件</div>
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>
@@ -77,13 +77,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
-
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

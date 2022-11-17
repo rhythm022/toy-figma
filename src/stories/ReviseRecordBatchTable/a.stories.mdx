@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/ModifyingTable"
+  title="sse/AddedReviseRecordTable"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 表式修订收集器
+# 被操作员添加进申请单的修订结果 table
 
 <Description of={"."} />
 
@@ -50,24 +50,23 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-收集用户对每一票提单的校核结果的修订
+- 显示修订结果
+- 还原取消某一条修订操作
 
 <div className="subheading">途径</div>
 
-- 逐个修改单元格(提单校核修订格、船期校核修订格)的值(selector)
-- 逐个修改单元格(填写描述)的值(input)
-- 选择(全选字段)后批量操作
-
 <div className="subheading">依赖于</div>
 
-- 修订的起始状态
+- 修订结果
 
 <div className="subheading">下层依赖</div>
 
-- （方法）获取修订状态
-- （方法）提交修订状态
+- 修订结果：`addedReviseRecordTable.items`
+- （方法）删除修订：`addedReviseRecordTable.deleteItem(id)`
 
 <div className="subheading">上层依赖</div>
+
+
 
 <div className="subheading">实现</div>
 
@@ -80,12 +79,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

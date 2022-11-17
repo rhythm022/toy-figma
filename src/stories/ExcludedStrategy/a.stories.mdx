@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/RequestFormTable"
+  title="sse/ExcludedStrategy"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,26 +42,28 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 申请单的 table
+# 剔除策略
 
 <Description of={"."} />
 
 <Prototype />
 
 <div className="subheading">目的</div>
-<div className="subheading">途径</div>
 
-- 显示申请单组成的 table
+- 显示剔除策略
+
+<div className="subheading">途径</div>
 
 <div className="subheading">依赖于</div>
 
-- 申请单
+- 剔除策略
 
 <div className="subheading">下层依赖</div>
 
-- （方法）获取申请单
+- 剔除策略：`excludedStrategyForShow.excludedStrategies`
 
 <div className="subheading">上层依赖</div>
+
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>
@@ -73,12 +75,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`

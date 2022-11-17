@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/ExcludingStrategy"
+  title="sse/CheckResultRevisingFilter"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 剔除策略显示
+# 校核结果的过滤项收集器
 
 <Description of={"."} />
 
@@ -50,19 +50,28 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示剔除策略
+收集用于过滤修订中校核结果的过滤项
 
 <div className="subheading">途径</div>
 
+- 提供匹配项目进行选择（selector）
+- 直接输入（input）
+
 <div className="subheading">依赖于</div>
 
-- 剔除策略
+- 候选过滤项
+- 被收集的过滤项
 
 <div className="subheading">下层依赖</div>
 
-- （方法）获取剔除策略
+- 过滤项：`checkResultRevisingFilter.items`
+- （方法）计算候选过滤项：`checkResultRevisingFilter.getItemOptions(key,condition)`
+- （方法）改变过滤项：`checkResultRevisingFilter.setItem(key,newVal)`
+- （方法）提交过滤：`checkResultRevisingFilter.filter()`
 
 <div className="subheading">上层依赖</div>
+
+无
 
 <div className="subheading">实现</div>
 
@@ -75,13 +84,12 @@ export const Template = (args) => ({
   </Story>
 </Canvas>
 
-<div className="subheading">使用示例</div>
-
+<!--<div className="subheading">使用示例</div>
 <Source dark id="." />
 
 <div className="subheading">状态图、类图、序列图等</div>
 
-<Chart />
+<Chart />-->
 
 <style>
   {`
