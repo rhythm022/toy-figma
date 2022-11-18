@@ -1,15 +1,24 @@
 import React from 'react';
+import s1 from "./proto/operator-beforeCommit--deleteMode.svg";
+import s2 from "./proto/operator-beforeCommit.svg";
+import s3 from "./proto/operator-commited--revert.svg";
+import s4 from "./proto/operator-commited.svg";
+import s5 from "./proto/reviewed.svg";
 
 export function Prototype() {
   return (
- <iframe 
-    width="100%" 
-    height="1600" 
-    class="ne-thirdparty-iframe"
-    data-testid="ne-thirdparty-reader-iframe"
-    sandbox="allow-forms allow-orientation-lock allow-presentation allow-same-origin allow-scripts allow-popups allow-downloads" 
-    frameborder="0"
-    allowfullscreen=""
-    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fr8Ibwbo7I095uZB2dA53v7%2FElement-UI-Kit-2.15.7-(Community)%3Fnode-id%3D27357%253A95888"></iframe>
-  );
+  <div>
+    操作员-提交前：
+    <img src={s2} width="1000" title='operator-beforeCommit' />
+    操作员-提交前--删除模式：
+    <img src={s1} width="1000" title='operator-beforeCommit--deleteMode' />
+    操作员-提交后：
+    <img src={s4} width="1000" title='operator-commited' />
+    操作员-提交后(回退单)：
+    <img src={s3} width="1000" title='operator-commited--revert' />
+    操作员、审核员-审核后：
+    <img src={s5} width="1000" title='reviewed' />
+
+  </div>
+    );
 }
