@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/CheckResultTableReviser"
+  title="sse/ReviseRequistion"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 校核结果的修订收集器
+# 被操作员添加进申请单的修订结果 table
 
 <Description of={"."} />
 
@@ -50,24 +50,21 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-收集用户对每一票提单校核结果的修订
+- 显示申请单
+- 对于被 reviewed 过的申请单，提供再次申请的入口
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
-- 逐个修改单元格(提单校核修订格、船期校核修订格)的值(selector)
-- 逐个修改单元格(描述格)的值(input)
-- 选择(全选字段)后批量操作
+- 表式
 
-<div className="subheading">依赖于</div>
+<div className="subheading">依赖信息</div>
 
-- 包括校核结果在内的提单信息
-- 提单的修订状态
+- 申请单
 
 <div className="subheading">下层依赖</div>
 
-- 提单信息及其修订状态：`checkResultRevising.items`
-- （方法）获取候选修订状态：`checkResultRevising.getReviseOptions(id,key)`
-- （方法）改变修订状态：`checkResultRevising.setItem(id,key,newVal)`
+- 申请单：`reviseRequistions`
+- （方法）再次申请：`againRequest(reviseRequistion)`
 
 <div className="subheading">上层依赖</div>
 

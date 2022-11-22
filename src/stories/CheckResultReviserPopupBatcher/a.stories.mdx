@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/AddedReviseRecordTable"
+  title="sse/CheckResultReviserPopupBatcher"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 被操作员添加进申请单的修订结果 table
+# 收集批量操作的修订态
 
 <Description of={"."} />
 
@@ -50,23 +50,21 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示修订结果
-- 还原取消某一条修订操作
+收集用于批量修订校核结果的修订参数
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
-<div className="subheading">依赖于</div>
+- 修改单元格(提单校核修订格、船期校核修订格)的值(selector)
+- 修改单元格(描述格)的值(input)
 
-- 修订结果
+<div className="subheading">依赖信息</div>
 
 <div className="subheading">下层依赖</div>
 
-- 修订结果：`addedReviseRecordTable.items`
-- （方法）删除修订：`addedReviseRecordTable.deleteItem(id)`
+- （方法）获取候选修订状态：`checkResultRevising.getReviseOptions(field,inputVal)`
+- （方法）批量操作：`checkResultRevising.batchSet(field,newVal)`
 
 <div className="subheading">上层依赖</div>
-
-
 
 <div className="subheading">实现</div>
 

@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/ReviseRecordBatchTable"
+  title="sse/ReviseRecordReviewer"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 被操作员添加进申请单的修订结果 table
+# 申请单审核
 
 <Description of={"."} />
 
@@ -50,22 +50,21 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示修订结果
-- 还原取消某一条修订操作
+- 收集审核员对(某申请单)修订记录的审核意见
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
-<div className="subheading">依赖于</div>
+- 修改单元格(审核意见)的值(checkbox)
+- 修改单元格(填写描述)的值(input)
+- 选择(全选字段)后批量操作
 
-- 修订结果
-
+<div className="subheading">依赖信息</div>
 <div className="subheading">下层依赖</div>
 
-- 修订结果：`addedReviseRecordTable.items`
-- （方法）删除修订：`addedReviseRecordTable.deleteItem(id)`
+- 申请单及其审核意见：`reviseRecordsCommited.self`
+- （方法）改变审核意见:`reviseRecordsCommited.modify(reviseRecord,field,newVal)`
 
 <div className="subheading">上层依赖</div>
-
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>

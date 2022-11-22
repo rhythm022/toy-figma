@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 校核结果的过滤项收集器
+# 对校核结果过滤的过滤项收集器
 
 <Description of={"."} />
 
@@ -52,22 +52,20 @@ export const Template = (args) => ({
 
 收集用于过滤修订中校核结果的过滤项
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
 - 提供匹配项目进行选择（selector）
 - 直接输入（input）
 
-<div className="subheading">依赖于</div>
+<div className="subheading">依赖信息</div>
 
 - 候选过滤项
-- 被收集的过滤项
 
 <div className="subheading">下层依赖</div>
 
-- 过滤项：`checkResultRevisingFilter.items`
-- （方法）计算候选过滤项：`checkResultRevisingFilter.getItemOptions(key,condition)`
-- （方法）改变过滤项：`checkResultRevisingFilter.setItem(key,newVal)`
-- （方法）提交过滤：`checkResultRevisingFilter.filter()`
+- 暂停收集不响应：`suspended`
+- （方法）计算候选过滤项：`checkResultRevisingFilter.getItemOptions(field,inputVal)`
+- （方法）执行过滤：`checkResultsRevising.filter({})`
 
 <div className="subheading">上层依赖</div>
 

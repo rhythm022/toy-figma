@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/Companies"
+  title="sse/PopupExplainationInput"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 公司
+# 收集批量操作的修订
 
 <Description of={"."} />
 
@@ -50,17 +50,14 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示公司
+收集理由描述
 
 <div className="subheading">途径/形式</div>
-
 <div className="subheading">依赖信息</div>
-
-- 公司
 
 <div className="subheading">下层依赖</div>
 
-- 公司：`companiesForShow.companies`
+- 提交：`setExplaination(text)`
 
 <div className="subheading">上层依赖</div>
 

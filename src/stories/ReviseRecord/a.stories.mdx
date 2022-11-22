@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/ReviewedReviseRecordTable"
+  title="sse/ReviseRecord"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 修订表中的修订结果 table
+# 被操作员添加的修订记录
 
 <Description of={"."} />
 
@@ -50,23 +50,23 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 显示修订表中修订结果
-- 撤销某一条修订结果
+- 显示修订记录
+- 撤销某一条修订
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
-<div className="subheading">依赖于</div>
+- 表
 
-- 修订结果
+<div className="subheading">依赖信息</div>
+
+- 修订记录
 
 <div className="subheading">下层依赖</div>
 
-- 修订结果：`reviewedReviseRecordTable.items`
-- （方法）撤销修订：`reviewedReviseRecordTable.revert(id)`
+- 修订结果：`reviseRecords.self`
+- （方法）删除修订：`reviseRecords.deleteOne(reviseRecord)`
 
 <div className="subheading">上层依赖</div>
-
-
 
 <div className="subheading">实现</div>
 

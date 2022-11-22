@@ -15,7 +15,7 @@ import {
 } from "@storybook/addon-docs";
 
 <Meta
-  title="sse/AddedReviseRecordTableReviewer"
+  title="sse/CheckResultReviser"
   component={MyButton}
   parameters={{
     docs: {
@@ -42,7 +42,7 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 申请单审核
+# 校核结果的修订收集器
 
 <Description of={"."} />
 
@@ -50,22 +50,29 @@ export const Template = (args) => ({
 
 <div className="subheading">目的</div>
 
-- 收集用户对申请单内修订结果的审核意见
+收集操作员对每一提单校核结果的修订
 
-<div className="subheading">途径</div>
+<div className="subheading">途径/形式</div>
 
-- 逐个修改单元格(审核意见)的值(checkbox)
-- 逐个修改单元格(填写描述)的值(input)
-- 选择(全选字段)后批量操作
+- 修改单元格(提单校核修订格、船期校核修订格)的值(selector)
+- 修改单元格(描述格)的值(input)
+- 选择(全选字段)后批量操作(子组件)
 
-<div className="subheading">依赖于</div>
+<div className="subheading">依赖信息</div>
+
+- 提单校核结果
+- 提单的修订态
+
 <div className="subheading">下层依赖</div>
 
-- 申请单及其审核意见：`addedReviseRecordTableReviewing.items`
-- （方法）改变审核意见:`addedReviseRecordTableReviewing.setItem(id,key,newVal)`
-- （方法）提交:`addedReviseRecordTableReviewing.reviewDone()`
+- 提单校核结果及其修订态：`checkResultsRevising.viewAfterFilter`
+- （方法）收集修订态：`checkResultsRevising.collect(id,reviseField,newVal)`
+- （方法）获取候选修订态：`checkResultsRevising.getReviseOptions(id,reviseField)`
+
+- （组件）`CheckResultTableReviserPopupBatcher` 批量操作
 
 <div className="subheading">上层依赖</div>
+
 <div className="subheading">实现</div>
 
 <Canvas columns={5}>
