@@ -1,0 +1,93 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="sse/ReviseRequistionRouterIcon"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "_description_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" /></div>',
+});
+
+# 申请单路由按钮
+
+<Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+
+- 显示草稿申请单内的修订记录数量
+- 提供路由到申请单详情界面
+
+<div className="subheading">用例</div>
+
+- 草稿申请单内的修订记录数量: `reviseRecordsNumberInDraftReviseRequistion`
+- (click: icon)跳转到申请单详情页
+
+<div className="subheading">实现</div>
+
+<Canvas columns={5}>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<!--<div className="subheading">使用示例</div>
+<Source dark id="." />
+
+<div className="subheading">状态图、类图、序列图等</div>
+
+<Chart />-->
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>

@@ -1,0 +1,94 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import MyButton from "../src/Button.vue";
+import { Chart } from "./chart";
+import { Prototype } from "./prototype";
+import dedent from "ts-dedent";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+  Source,
+} from "@storybook/addon-docs";
+
+<Meta
+  title="sse/ExplainationInputPopup"
+  component={MyButton}
+  parameters={{
+    docs: {
+      description: {
+        component: "_description_",
+      },
+    },
+  }}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    onClick: {},
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+  }}
+/>
+
+export const Template = (args) => ({
+  components: { MyButton },
+  setup() {
+    return { args };
+  },
+  template: '<div><my-button v-bind="args" /></div>',
+});
+
+# 用于收集理由的弹窗
+
+<Description of={"."} />
+
+<Prototype />
+
+<div className="subheading">目的</div>
+
+收集理由描述
+
+<div className="subheading">用例</div>
+
+- (input: 输入框)记录为 explaination
+- (click: "确认"按钮)抛出 explaination: `emitExplaination(explaination)`
+- (click: "返回"按钮)关闭弹窗
+- (props: open true)打开弹窗
+
+<div className="subheading">实现</div>
+
+<Canvas columns={5}>
+  <Story name="Secondary" args={{ label: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "large", label: "Button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<!--<div className="subheading">使用示例</div>
+<Source dark id="." />
+
+<div className="subheading">状态图、类图、序列图等</div>
+
+<Chart />-->
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 16px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+`}
+</style>
