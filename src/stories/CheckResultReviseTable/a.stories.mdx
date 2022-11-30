@@ -46,6 +46,8 @@ export const Template = (args) => ({
 
 <Description of={"."} />
 
+<div className="subheading">原型</div>
+
 <Prototype />
 
 <div className="subheading">目的</div>
@@ -55,16 +57,16 @@ export const Template = (args) => ({
 <div className="subheading">用例</div>
 
 - 提单校核结果及其修订态: `viewAfterFilter`
-- 可 undo: `canUndo`
-- 可 redo: `canRedo`
+- 本 view 可 undo: `canUndo`
+- 本 view 可 redo: `canRedo`
 - (click: 修订下拉框)获取候选修订态: `getReviseOptions(field,currentVal)`
 - (click: 下拉框中某一项、input: 填写描述字段)修订: `reviseOne(id,field,newVal)`
 - (click: 选中字段、click: 选中字段表头)记录为 batchFlagIds
 - (click: 批量操作按钮)打开批量操作弹框
 - (click: 批量操作弹框中的"返回"按钮)关闭批量操作弹框
 - (click: 批量操作弹框中的"清空"按钮)清空批量操作弹框中的用户内容
-- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchRevise(batchFlagIds,field,newVal)`
-- (click: 批量操作弹框中的"是否覆盖已填内容"checkbox): 记录覆盖策略
+- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchRevise(batchFlagIds,field,newVal,strategy)`
+- (click: 批量操作弹框中的"是否覆盖已填内容"checkbox)记录覆盖策略strategy
 - (click: 左箭头)undo 本 view 的修订态: `undo()`
 - (click: 右箭头)redo 本 view 的修订态: `redo()`
 

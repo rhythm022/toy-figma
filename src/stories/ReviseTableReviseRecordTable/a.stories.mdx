@@ -42,9 +42,11 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 修订表中的修订结果table
+# 修订表中的修订结果 table
 
 <Description of={"."} />
+
+<div className="subheading">原型</div>
 
 <Prototype />
 
@@ -59,7 +61,7 @@ export const Template = (args) => ({
 - (click: 选中字段、click: 选中字段表头)记录为 batchFlagIds
 - (click: "申请撤销"按钮)打开确认弹框
 - (click: 确认弹框中的"返回"按钮)关闭确认弹框
-- (click: 确认弹框中的"确认"按钮)提交撤销: `revert(batchFlagIds)`
+- (click: 确认弹框中的"确认"按钮)提交撤销、关闭确认弹框: `revert(batchFlagIds)`
 
 <div className="subheading">实现</div>
 

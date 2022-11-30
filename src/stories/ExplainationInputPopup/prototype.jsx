@@ -4,7 +4,7 @@ import s1 from "./proto/default.svg";
 export function Prototype() {
   return (
   <div>
-    <img src={s1} width="1000" />
+    <img src={s1} width="600" />
   </div>
     );
 }

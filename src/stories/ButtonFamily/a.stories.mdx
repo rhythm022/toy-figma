@@ -13,6 +13,10 @@ import {
   PRIMARY_STORY,
   Source,
 } from "@storybook/addon-docs";
+import AddToDraftReviseRequistionButton from "./proto/AddToDraftReviseRequistionButton.svg";
+import AgainCommitReviewButton from "./proto/AgainCommitReviewButton.svg";
+import CommitReviewButton from "./proto/CommitReviewButton.svg";
+import ReviewDoneButton from "./proto/ReviewDoneButton.svg";
 
 <Meta
   title="sse/ButtonFamily"
@@ -42,22 +46,37 @@ export const Template = (args) => ({
   template: '<div><my-button v-bind="args" /></div>',
 });
 
-# 操作按钮类
+# 操作按钮组件族
 
 <Description of={"."} />
 
-<Prototype />
-
-<div className="subheading">目的</div>
-
-<div className="subheading">用例</div>
+<div>
+  <img src={AddToDraftReviseRequistionButton} width="200" />
+</div>
 
 - 修订记录数量: `draftReviseRecord.length`
-- (click: "添加至草稿申请单()"按钮)提交修订记录至草稿申请单: `commitToDraftRequistion()`
+- (click: "添加至草稿申请单(x)"按钮)提交修订记录至草稿申请单:
+  `commitToDraftRequistion()`
+
+<div>
+  <img src={CommitReviewButton} width="200" />
+</div>
+
 - (click: "提交审核"按钮)提交草稿申请单至审核: `commitToReview()`
-- (click: "再次提交审核()"按钮)提交修订记录直接至审核: `commitToDirectlyReview()`
+
+<div>
+  <img src={ReviewDoneButton} width="200" />
+</div>
 
 - (click: "完毕审核"按钮)提交: `reviewDone()`
+
+<div>
+  <img src={AgainCommitReviewButton} width="200" />
+</div>
+
+- 修订记录数量: `againReviseRecord.length`
+- (click: "再次提交审核(x)"按钮)提交修订记录直接至审核:
+  `commitToDirectlyReview()`
 
 <div className="subheading">实现</div>
 

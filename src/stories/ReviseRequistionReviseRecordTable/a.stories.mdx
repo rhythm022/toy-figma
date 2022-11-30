@@ -46,6 +46,8 @@ export const Template = (args) => ({
 
 <Description of={"."} />
 
+<div className="subheading">原型</div>
+
 <Prototype />
 
 <div className="subheading">目的</div>
@@ -53,14 +55,13 @@ export const Template = (args) => ({
 - 显示修订记录
 - 撤销某一条修订
 
-
 <div className="subheading">用例</div>
 
 - 修订结果: `reviseRequistionReviseRecord`
 - (click: 选中字段、click: 选中字段表头)记录为 batchFlagIds
 - (click: "移出选中"按钮)打开确认弹框
 - (click: 确认弹框中的"返回"按钮)关闭确认弹框
-- (click: 确认弹框中的"确认"按钮)提交撤销: `delete(batchFlagIds)`
+- (click: 确认弹框中的"确认"按钮)提交撤销、关闭确认弹框: `delete(batchFlagIds)`
 
 <div className="subheading">实现</div>
 

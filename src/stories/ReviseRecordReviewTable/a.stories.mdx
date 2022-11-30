@@ -46,6 +46,8 @@ export const Template = (args) => ({
 
 <Description of={"."} />
 
+<div className="subheading">原型</div>
+
 <Prototype />
 
 <div className="subheading">目的</div>
@@ -55,12 +57,12 @@ export const Template = (args) => ({
 <div className="subheading">用例</div>
 
 - 申请单及其审核态: `commitedReviseRecords`
-- (click: 审核结果字段、input: 审核描述字段)审核:`reviewOne(id,field,newVal)`
+- (click: 审核结果字段、input: 审核描述字段)审核: `reviewOne(id,field,newVal)`
 - (click: 选中字段、click: 选中字段表头)记录为 batchFlagIds
 - (click: 批量操作按钮)打开批量操作弹框
 - (click: 批量操作弹框中的"返回"按钮)关闭批量操作弹框
-- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchReview(batchFlagIds,field,newVal)`
-- (click: 批量操作弹框中的"是否覆盖已填内容"checkbox): 记录覆盖策略
+- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchReview(batchFlagIds,field,newVal,strategy)`
+- (click: 批量操作弹框中的"是否覆盖已填内容"checkbox)记录覆盖策略strategy
 
 <div className="subheading">实现</div>
 
