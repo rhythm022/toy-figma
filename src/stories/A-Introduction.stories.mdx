@@ -10,6 +10,7 @@ import StackAlt from "./assets/stackalt.svg";
 import { TreeAgainAddReviseRecord } from "./TreeAgainAddReviseRecord";
 import { TreeNormallyAddReviseRecord } from "./TreeNormallyAddReviseRecord";
 import { TreeReviseRequistion } from './TreeReviseRequistion'
+import { TreeReviseTable } from './TreeReviseTable'
 
 <Meta title="sse/A-Introduction" />
 
@@ -102,9 +103,20 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
 - (click: 批量操作弹框中的"是否覆盖已填内容"checkbox)记录覆盖策略strategy
 - (click: "完毕审核"按钮)提交: `reviewDone()`
 
+<TreeReviseTable />
+
+<div className="subheading">组件详情</div>
+
+[ReviseRequistionRouterIcon](?path=/docs/sse-reviserequistionroutericon--secondary)
+
+[ReviseTableReviseRecordTable](?path=/docs/sse-revisetablereviserecordtable--secondary)
 
 
+- 修订结果: `reviewedReviseRecords`
 
+- (click: 确认弹框中的"确认"按钮)提交撤销、关闭确认弹框: `revert(batchFlagIds)`
+
+- 草稿申请单内的修订记录数量: `reviseRecordsNumberInDraftReviseRequistion`
 
 
 
