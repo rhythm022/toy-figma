@@ -1,15 +1,13 @@
 import React,{useEffect } from 'react';
 
-export function CmpTree() {
+export function TreeAgainAddReviseRecord() {
   return (
     <Mermaid chart={`
     flowchart TD
-    subgraph 维稳页面
-    B["view 组件"]
-    B.-oC[[MyButton]]
-    B--xD[Header]
-    B -- text -->E(某组件)
-    C x--x F[Button]
+    subgraph 基于修订申请单新增修订记录
+    A["view"]
+    A--xC[CheckResultReviseTable]
+    A--xE[AgainCommitReviewButton]
     end
     `}/>
   );

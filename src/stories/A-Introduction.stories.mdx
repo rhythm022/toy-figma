@@ -7,9 +7,175 @@ import Flow from "./assets/flow.svg";
 import Plugin from "./assets/plugin.svg";
 import Repo from "./assets/repo.svg";
 import StackAlt from "./assets/stackalt.svg";
-import { CmpTree } from "./CmpTree";
+import { TreeAgainAddReviseRecord } from "./TreeAgainAddReviseRecord";
+import { TreeNormallyAddReviseRecord } from "./TreeNormallyAddReviseRecord";
+import { TreeReviseRequistion } from './TreeReviseRequistion'
 
 <Meta title="sse/A-Introduction" />
+
+
+
+# Welcome to SSE 重点项目
+
+Storybook helps you build UI components in isolation from your app's business logic, data, and context.
+That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+
+Browse example stories now by navigating to them in the sidebar.
+View their code in the `stories` directory to learn how they work.
+We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+
+<TreeNormallyAddReviseRecord />
+<div className="subheading">组件详情</div>
+
+[CheckResultReviseFilter](?path=/docs/sse-checkresultrevisefilter--secondary)
+
+[CheckResultReviseTable](?path=/docs/sse-checkresultrevisetable--secondary)
+
+[ReviseRequistionRouterIcon](?path=/docs/sse-reviserequistionroutericon--secondary)
+
+[AddToDraftReviseRequistionButton](?path=/docs/sse-buttonfamily--secondary)
+
+- 草稿申请单内的修订记录数量: `reviseRecordsNumberInDraftReviseRequistion`
+
+- (input: 下拉框)计算候选过滤项: `getFilterItemOptions(field,inputVal)`
+- (click: 修订下拉框)获取候选修订态: `getReviseOptions(field,currentVal)`
+
+- (click: "查询"按钮)抛出 filterItems、disable"查询"按钮: `updateViewForRevise(filterItems)`
+- 提单校核结果及其修订态: `filteredViewForRevise`
+- 本 view 可 undo: `canUndo`
+- 本 view 可 redo: `canRedo`
+- (click: 左箭头)undo 本 view 的修订态: `undo()`
+- (click: 右箭头)redo 本 view 的修订态: `redo()`
+
+- 修订记录数量: `draftReviseRecord.length`
+- (click: 下拉框中某一项、input: 填写描述字段)修订: `reviseOne(id,field,newVal)`
+- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchRevise(batchFlagIds,field,newVal,strategy)`
+
+- (click: "添加至草稿申请单(x)"按钮)提交修订记录至草稿申请单: `commitToDraftRequistion()`
+
+<TreeAgainAddReviseRecord />
+
+<div className="subheading">组件详情</div>
+
+[CheckResultReviseTable](?path=/docs/sse-checkresultrevisetable--secondary)
+
+[AgainCommitReviewButton](?path=/docs/sse-buttonfamily--secondary)
+
+- (click: 修订下拉框)获取候选修订态: `getReviseOptions(field,currentVal)`
+
+- 提单校核结果及其修订态: `filteredViewForRevise`
+- 本 view 可 undo: `canUndo`
+- 本 view 可 redo: `canRedo`
+- (click: 左箭头)undo 本 view 的修订态: `undo()`
+- (click: 右箭头)redo 本 view 的修订态: `redo()`
+
+- 修订记录数量: `againReviseRecord.length`
+- (click: 下拉框中某一项、input: 填写描述字段)修订: `reviseOne(id,field,newVal)`
+- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchRevise(batchFlagIds,field,newVal,strategy)`
+
+- (click: "再次提交审核(x)"按钮)提交修订记录直接至审核:  `commitToDirectlyReview()`
+
+<TreeReviseRequistion />
+<div className="subheading">组件详情</div>
+
+[ReviseRequistionTable](?path=/docs/sse-reviserequistiontable--secondary)
+
+[ReviseTableRouterIcon](?path=/docs/sse-revisetableroutericon--secondary)
+
+[ReviseRequistionReviseRecordTable](?path=/docs/sse-reviserequistionreviserecordtable--secondary)
+
+[ReviseRecordReviewTable](?path=/docs/sse-reviserecordreviewtable--secondary)
+
+
+
+- 修订表内的修订记录数量: `reviseRecordsNumberInReviseTable`
+
+- 申请单: `reviseRequistions`
+
+- 修订结果: `reviseRequistionReviseRecord`
+- (click: 确认弹框中的"确认"按钮)提交撤销、关闭确认弹框: `delete(batchFlagIds)`
+- (click: "提交审核"按钮)提交草稿申请单至审核: `commitToReview()`
+
+- 申请单及其审核态: `commitedReviseRecords`
+- (click: 审核结果字段、input: 审核描述字段)审核: `reviewOne(id,field,newVal)`
+- (click: 批量操作弹框中的"确认"按钮)批量修订、关闭批量操作弹框: `batchReview(batchFlagIds,field,newVal,strategy)`
+- (click: 批量操作弹框中的"是否覆盖已填内容"checkbox)记录覆盖策略strategy
+- (click: "完毕审核"按钮)提交: `reviewDone()`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className="subheading">Configure</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/addons/addon-types"
+    target="_blank"
+  >
+    <img src={Plugin} alt="plugin" />
+    <span>
+      <strong>Presets for popular tools</strong>
+      Easy setup for TypeScript, SCSS and more.
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/configure/webpack"
+    target="_blank"
+  >
+    <img src={StackAlt} alt="Build" />
+    <span>
+      <strong>Build configuration</strong>
+      How to customize webpack and Babel
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/configure/styling-and-css"
+    target="_blank"
+  >
+    <img src={Colors} alt="colors" />
+    <span>
+      <strong>Styling</strong>
+      How to load and configure CSS libraries
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
+    target="_blank"
+  >
+    <img src={Flow} alt="flow" />
+    <span>
+      <strong>Data</strong>
+      Providers and mocking for data libraries
+    </span>
+  </a>
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip">Tip</span>Edit the Markdown in{" "}
+  <code>stories/Introduction.stories.mdx</code>
+</div>
 
 <style>
   {`
@@ -115,77 +281,3 @@ import { CmpTree } from "./CmpTree";
 
 `}
 </style>
-
-# Welcome to SSE 重点项目
-
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
-
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
-
-<CmpTree />
-<div className="subheading">组件详情</div>
-
-[MyButton](?path=/docs/sse-mybutton--secondary)
-
-[Button](?path=/docs/sse-mybutton--secondary)
-
-[Header](?path=/docs/sse-mybutton--secondary)
-
-[某组件](?path=/docs/sse-mybutton--secondary)
-
-<div className="subheading">Configure</div>
-
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
-
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{" "}
-  <code>stories/Introduction.stories.mdx</code>
-</div>

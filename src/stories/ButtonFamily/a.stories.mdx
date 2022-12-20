@@ -55,28 +55,14 @@ export const Template = (args) => ({
 </div>
 
 - 修订记录数量: `draftReviseRecord.length`
-- (click: "添加至草稿申请单(x)"按钮)提交修订记录至草稿申请单:
-  `commitToDraftRequistion()`
-
-<div>
-  <img src={CommitReviewButton} width="200" />
-</div>
-
-- (click: "提交审核"按钮)提交草稿申请单至审核: `commitToReview()`
-
-<div>
-  <img src={ReviewDoneButton} width="200" />
-</div>
-
-- (click: "完毕审核"按钮)提交: `reviewDone()`
+- (click: "添加至草稿申请单(x)"按钮)提交修订记录至草稿申请单: `commitToDraftRequistion()`
 
 <div>
   <img src={AgainCommitReviewButton} width="200" />
 </div>
 
 - 修订记录数量: `againReviseRecord.length`
-- (click: "再次提交审核(x)"按钮)提交修订记录直接至审核:
-  `commitToDirectlyReview()`
+- (click: "再次提交审核(x)"按钮)提交修订记录直接至审核:  `commitToDirectlyReview()`
 
 <div className="subheading">实现</div>
 
